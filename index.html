@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: #C1E1ED;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.middle {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.folder {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  background: #fff;
+  border: 3px solid #FFD485;
+  border-radius: 5px;
+  cursor: pointer;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.folder::before {
+  content: "";
+  position: absolute;
+  top: -23%;
+  left: -3px;
+  width: 30px;
+  height: 14px;
+  background-color: #FFD485;
+  border-radius: 5px 5px 0 0;
+  z-index: -1;
+}
+
+.folder::after {
+  content: "";
+  position: absolute;
+  width: 104%;
+  height: 103%;
+  background-color: #FFD485;
+  border: 3px solid #FFD485;
+  border-radius: 5px;
+  transform: rotateX(0);
+  left: -2px;
+  top: -1px;
+}
+
+.folder:hover::after {
+  top: 4px;
+  transform: rotateX(-30deg);
+}
+
+.file {
+  position: absolute;
+  top: 153%;
+  left: 101%;
+  margin-right: -50%;
+  width: 60px;
+  height: 50px;
+  transform: translate(-80px, -80px);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.folder:hover .one {
+  background: #ffd6a5;
+  transform: translate(-189%, -333%) rotate(-13deg);
+}
+
+.folder:hover .two {
+  background: #efa390;
+  transform: translate(-66%, -333%) rotate(13deg);
+}
+
+.folder:hover .three {
+  background: #fdffb6;
+  transform: translate(-129%, -315%);
+}
+
+.folder-name {
+  margin-top: 10px;
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>O que tem na pasta?</h1>
+        </header>
+
+        <section class="wrapper">
+            <div>
+                <img src="images/paula.png" width="300">
+            </div>
+          
+            <div class="middle">
+                <div class="folder">
+                  <div class="file one"></div>
+                  <div class="file two"></div>
+                  <div class="file three"></div>
+                </div>
+                <div class="folder-name">Paula</div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        let folder = document.querySelector('.folder');
+
+        folder.addEventListener('click', () => {
+            window/location.assign('https://paula-adventure.vercel.app');
+        })
+    </script>
+</body>
+</html>
